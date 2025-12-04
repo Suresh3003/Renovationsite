@@ -1,0 +1,137 @@
+/* ---------- RESPONSIVE: XS / SM / MD / LG / XL (paste at end of main.css) ---------- */
+
+/* -------------------- Extra Small: phones (max-width: 575.98px) -------------------- */
+@media (max-width: 575.98px) {
+  /* layout paddings */
+  .home_container { padding: 40px 18px; }
+  .cat_container  { padding: 20px 12px; }
+  .service_container { padding: 30px 12px; }
+  .about_container { padding: 30px 14px; }
+  .contact_container { padding: 30px 14px; }
+
+  /* navbar */
+  .navbar .container-fluid { padding-left: 12px; padding-right: 12px; }
+  .logo { height: 44px; width: auto; }
+
+  /* hero */
+  .home_text { font-size: 34px; line-height: 38px; }
+  .home_span_text { font-size: 18px; }
+
+  /* cards: stack & full width */
+  .cat_card, .service_card, .home_repair_card, .contact_card, .contact_form_card {
+    width: 100%;
+    max-width: 100%;
+    margin: 12px 0;
+  }
+
+  /* images */
+  .about2_img, .home_img, .service_img, .cat_icon { max-width: 100%; height: auto; }
+
+  /* help card */
+  .help_card { width: 100%; padding: 30px 18px; height: auto; }
+
+  /* about2 section: make image flow above/before text */
+  .about2_bg_card { margin: 24px auto; position: static; width: 90%; }
+  .about2_img { position: static; transform: none; display: block; margin: 0 auto; }
+
+  /* contact form stack */
+  .contact_form_card, .contact_card { position: static; transform: none; padding: 20px; margin: 16px auto; }
+
+  /* small tweaks */
+  .footer_icons { gap: 10px; }
+  .img_box { width: 34px; height: 34px; }
+}
+
+/* -------------------- Small: >=576px and <768px -------------------- */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .home_container { padding: 50px 24px; }
+  .logo { height: 48px; }
+
+  .home_text { font-size: 40px; line-height: 44px; }
+  .home_span_text { font-size: 20px; }
+
+  .cat_card, .service_card { max-width: 320px; width: 100%; margin: 12px auto; }
+  .service_img { max-width: 100%; height: auto; }
+
+  .about2_bg_card { width: 80%; margin: 40px auto; position: relative; }
+  .about2_img { position: relative; transform: translateX(10px) translateY(-20px); max-width: 100%; }
+
+  .contact_form_card { max-width: 700px; padding: 36px; margin: 18px auto; }
+  .contact_card { margin: 20px auto; position: static; transform: none; }
+
+  .home_service_cardd { gap: 18px; justify-content: center; }
+}
+
+/* -------------------- Medium: >=768px and <992px -------------------- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .home_container { padding: 70px 60px; }
+  .logo { height: 54px; }
+
+  .home_text { font-size: 56px; line-height: 60px; }
+  .home_span_text { font-size: 32px; }
+
+  /* 2-column hero: keep image right, text left */
+  .home_txt_container { margin-top: 60px; }
+  .home_img { max-width: 95%; }
+
+  .cat_card, .service_card { width: 335px; max-width: 100%; margin: 12px; }
+
+  .about2_bg_card { width: 440px; margin: 80px 20px; position: relative; }
+  .about2_img { position: absolute; transform: translate(80px, -80px); max-width: 420px; }
+
+  .contact_form_card { max-width: 760px; padding: 60px 30px; position: relative; }
+  .contact_card { position: static; transform: none; margin-top: 30px; }
+
+  .home_service_cardd { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+}
+
+/* -------------------- Large: >=992px and <1200px -------------------- */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .home_container { padding: 90px 100px; }
+  .logo { height: 58px; }
+
+  .home_text { font-size: 66px; line-height: 68px; }
+  .home_span_text { font-size: 40px; }
+
+  .cat_container { padding: 0 60px 80px 60px; }
+  .cat_card, .service_card { width: 335px; margin: 0 12px 30px 0; }
+
+  .about2_bg_card { width: 580px; margin: 160px 0 120px 80px; position: relative; }
+  .about2_img { position: absolute; transform: translate(100px, -100px); }
+
+  .contact_form_card { width: 800px; padding: 120px 30px 0 250px; }
+  .contact_card { position: absolute; transform: translate(-180px, -450px); }
+
+  .home_service_cardd { margin: 30px 60px 0 60px; gap: 24px; }
+}
+
+/* -------------------- Extra Large: >=1200px -------------------- */
+@media (min-width: 1200px) {
+  .home_container { padding: 120px 120px; }
+  .logo { height: 58px; }
+
+  .home_text { font-size: 70px; line-height: 60px; }
+  .home_span_text { font-size: 45px; }
+
+  .cat_card, .service_card { width: 335px; }
+  .about2_bg_card { width: 580px; margin: 240px 0 120px 120px; }
+  .about2_img { position: absolute; transform: translate(100px, -100px); }
+
+  .contact_form_card { width: 800px; padding: 120px 30px 0 250px; }
+  .contact_card { position: absolute; transform: translate(-180px, -450px); }
+}
+
+/* -------------------- Shared small helpers (applies to all devices) -------------------- */
+/* ensure images are fluid and don't overflow */
+img, .home_img, .service_img, .about2_img, .cat_icon, .logo { max-width: 100%; height: auto; }
+
+/* let rows wrap when necessary to prevent horizontal overflow */
+.cat_container, .home_service_cardd, .footer_icons, .row.align-items-start, .row.align-items-center { flex-wrap: wrap; }
+
+/* keep nav links from wrapping awkwardly */
+a.nav-link { white-space: nowrap; }
+
+/* dropdown scroll for small screens */
+.dropdown-menu { max-height: 60vh; overflow-y: auto; }
+
+/* end responsive section */

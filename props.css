@@ -1,0 +1,426 @@
+body {
+    font-family: 'Poppins' !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.logo {
+    height: 58px;
+    width: 100px;
+}
+
+.nav-txt {
+    font-weight: 500;
+    color: #000000;
+}
+
+.nav-txt:hover {
+    font-weight: 500;
+    color: #ffd000;
+}
+
+.dropdown-item:hover {
+    background-color: #ffd000;
+    color: #000000;
+}
+
+.home_container {
+    background-color: rgb(255, 255, 255);
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.home_txt_container {
+    margin-top: 80px;
+}
+
+.home_text {
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 60px;
+    color: #f8d42b;
+}
+
+.home_span_text {
+    font-size: 45px;
+    font-weight: 500;
+    display: block;
+    color: rgb(124, 124, 124);
+}
+
+.home_img {}
+
+.home_desc {
+    color: rgb(77, 77, 77);
+    text-align: justify;
+}
+
+.home_readmore {
+    height: 45px;
+    width: 160px;
+    background-color: white;
+    color: #2c2c2c;
+    border-color: #2c2c2c;
+    border-width: 1px;
+    margin-top: 20px;
+}
+
+.home_readmore:hover {
+    height: 45px;
+    width: 160px;
+    background-color: rgb(255, 230, 0);
+    color: #000000;
+    border-width: 1px;
+    margin-top: 20px;
+}
+
+
+.cat_container {
+    background-color: #f8d42b;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 80px 100px 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat_card {
+    background-color: rgb(255, 255, 255);
+    height: 350px;
+    width: 270px;
+    padding: 0px 20px 20px 20px;
+    margin: 0px 10px 0px 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.cat_icon {
+    height: 75px;
+    width: 75px;
+    margin-bottom: 20px;
+}
+
+.cat_head {
+    font-weight: bold;
+    text-align: center;
+    color: #eac60b;
+    margin-bottom: 20px;
+}
+
+.cat_txt {
+    text-align: justify;
+    color: #2c2c2c;
+}
+
+
+.about_container {
+    background-color: aliceblue;
+    padding: 100px;
+}
+
+.about_head {
+    font-style: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about_txt {
+    color: #2c2c2c;
+    padding: 70 0px70 0px;
+    text-align: justify;
+}
+
+.about_btn {
+    background-color: #f8d42b;
+    color: #000000;
+    height: 47px;
+    width: 150px;
+    border: 0px;
+    display: block;
+    margin: 20px auto;
+}
+
+
+
+.help_container {
+    background-image: url('bg_help.png');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 60px 0px 90px 100px;
+}
+
+.help_card {
+    background-color: #f8d42b;
+    height: 500px;
+    width: 450px;
+    padding: 80px 0px 0px 40px;
+}
+
+.help_txt_1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 20px;
+}
+
+.help_txt_2 {
+    font-size: 70px;
+    color: #000000;
+    font-weight: 600;
+    display: block;
+}
+
+.service_container {
+    background-image: url('services_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    padding: 60px 0px 90px 100px;
+}
+
+.service_head {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.service_txt {
+    margin: 30px 0px 60px 0px;
+}
+
+.service_card {
+    background-color: rgb(255, 255, 255);
+    height: 420px;
+    width: 335px;
+    padding: 25px;
+    margin: 0px 10px 0px 0px;
+}
+
+.service_img {
+    height: 200px;
+    width: 280px;
+}
+
+.service_card_head {
+    font-weight: bold;
+    margin-top: 30px;
+    color: #f8d42b;
+}
+
+.service_card_txt {
+    text-align: justify;
+}
+
+.home_service_container {
+    background-color: #202020;
+}
+
+.home_repair_service_head {
+    padding-top: 100px;
+    font-size: 45px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.home_repair_service_subhead {
+    color: rgb(133, 133, 133);
+    text-align: center;
+}
+
+.home_service_cardd {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px 100px 0px 100px;
+}
+
+.home_repair_card {
+    height: 250px;
+    width: 300px;
+    padding: 20px;
+}
+
+.home_repair_card_head {
+    font-weight: bold;
+    color: #f8d42b;
+}
+
+.home_repair_card_txt {
+    color: aliceblue;
+    text-align: justify;
+}
+
+.service_btn {
+    height: 45px;
+    width: 180px;
+    border-width: 2px;
+    border-color: #f8d42b;
+    color: #f8d42b;
+    background-color: #202020;
+    border-radius: 2px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+
+
+.aboutus_2_container {
+    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient(to right, #cfcfcf 50%, #ffffff 50%);
+
+}
+
+.about2_bg_card {
+    height: 360px;
+    width: 580px;
+    background-color: #f8d42b;
+    margin: 240px 0 120px 120px;
+    position: relative;
+}
+
+.about2_img {
+    height: 360px;
+    width: 550px;
+    position: absolute;
+    transform: translate(100px, -100px);
+}
+
+.aboutus_2_head {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.aboutus_2_txt {
+    text-align: justify;
+}
+
+.about_2_btn {
+    height: 45px;
+    width: 160px;
+    background-color: white;
+    color: #6e6e6e;
+    border-color: #2c2c2c;
+    border-width: 1px;
+    margin-top: 20px;
+}
+
+.contact_container {
+    background-color: #000000;
+    padding: 50px 100px 100px 400px;
+}
+
+.contact_form_card {
+    height: 500px;
+    width: 800px;
+    background-color: rgb(255, 255, 255);
+    padding: 120px 30px 0 250px;
+    position: relative;
+}
+
+input[type="text"],
+textarea {
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    border-radius: 0px;
+}
+
+input[type="email"],
+textarea {
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 0px;
+}
+
+input,
+textarea {
+    width: 100%;
+    border-bottom: 2px solid #000000;
+    outline: none;
+}
+
+.contact_form {
+    height: 45px;
+    width: 140px;
+    background-color: white;
+    border-color: #000000;
+    border-width: 2px;
+}
+
+.contact_card {
+    height: 400px;
+    width: 380px;
+    background-color: #f8d42b;
+    position: absolute;
+    box-shadow: 0px 0px 50px 0px black;
+    transform: translate(-180px, -450px);
+    padding: 40px 30px 0 30px;
+}
+
+.contact_card_head {
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.contact_card_txt {
+    display: block;
+}
+
+.footer_container {
+    background-color: #2c2c2c;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer_txt {
+    color: #eac60b;
+    font-size: 13px;
+}
+
+.footer_head {
+    font-size: 18px;
+    font-weight: bold;
+    color: #eac60b;
+}
+
+.img_box {
+    width: 25px;
+    height: 25px;
+    position: relative;
+}
+
+.footer_icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.img_box img {
+    position: absolute;
+    transform: translate(-15px, 0px);
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.img_box img.hover_img {
+    opacity: 0;
+}
+
+.img_box:hover img.hover_img {
+    opacity: 1;
+}
+
+.img_box:hover img.main_img {
+    opacity: 0;
+}
