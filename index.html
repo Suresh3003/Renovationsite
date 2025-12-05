@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Task_2 - Responsive</title>
-
-  <!-- Bootstrap (unchanged) -->
+  <title>Renovate your Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Responsive CSS (embedded for convenience) -->
   <style>
-    :root{
+    :root {
       --yellow: #f8d42b;
       --dark: #2c2c2c;
       --muted: #6e6e6e;
@@ -22,191 +19,713 @@
       --container-pad-lg: 120px;
     }
 
-    /* ---------------- Base Styles (applies to all sizes) ---------------- */
-    html,body{height:100%;margin:0;font-family:'Poppins',sans-serif;overflow-x:hidden}
-    a{color:inherit;text-decoration:none}
-    .logo { height:58px; width:auto; display:block; }
-    .nav-txt{ font-weight:500; color:#000 }
-    .nav-txt:hover{ color:var(--yellow) }
-    .cat_icon{height: 80px; width: 80px;}
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .logo {
+      height: 58px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-txt {
+      font-weight: 500;
+      color: #000
+    }
+
+    .nav-txt:hover {
+      color: var(--yellow)
+    }
+
+    .cat_icon {
+      height: 80px;
+      width: 80px;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f8d42b;
+      color: #000;
+    }
 
     /* Make images fluid by default */
-    img, .home_img, .service_img, .about2_img, .cat_icon { max-width:100%; height:auto; display:block; }
+    img,
+    .home_img,
+    .service_img,
+    .about2_img,
+    .cat_icon {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
     /* Hero */
-    .home_container{ background:#fff; padding:120px var(--container-pad-lg) 100px; display:flex; align-items:center; }
-    .home_text{ color:var(--yellow); font-weight:900; font-size:70px; line-height:60px; margin:0 }
-    .home_span_text{ display:block; font-weight:500; font-size:45px; color:#7c7c7c }
-    .home_desc{ color:#4d4d4d; margin-top:18px; text-align:justify; }
-    .home_readmore{ margin-top:20px; height:45px; width:160px; background:#fff; color:var(--dark); border:1px solid var(--dark); }
+    .home_container {
+      background: #fff;
+      padding: 120px var(--container-pad-lg) 100px;
+      display: flex;
+      align-items: center;
+    }
+
+    .home_text {
+      color: var(--yellow);
+      font-weight: 900;
+      font-size: 70px;
+      line-height: 60px;
+      margin: 0
+    }
+
+    .home_span_text {
+      display: block;
+      font-weight: 500;
+      font-size: 45px;
+      color: #7c7c7c
+    }
+
+    .home_desc {
+      color: #4d4d4d;
+      margin-top: 18px;
+      text-align: justify;
+    }
+
+    .home_readmore {
+      margin-top: 20px;
+      height: 45px;
+      width: 160px;
+      background: #fff;
+      color: var(--dark);
+      border: 1px solid var(--dark);
+    }
 
     /* Category cards */
-    .cat_container{ background:var(--yellow); padding:0 80px 100px 80px; display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:20px }
-    .cat_card{ background:#fff; width:var(--card-max); padding:16px; border-radius:0px; box-sizing:border-box; text-align:left; }
-    .cat_head{ color:#eac60b; text-align:center; font-weight:bold }
-    .cat_txt{ text-align:justify }
+    .cat_container {
+      background: var(--yellow);
+      padding: 0 80px 100px 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px
+    }
 
-    /* About area */
-    .about_container{ background:aliceblue; padding:100px }
-    .about_head{ font-weight:bold; text-align:center; margin-bottom:20px }
-    .about_txt{ text-align:justify; color:#2c2c2c }
+    .cat_card {
+      background: #fff;
+      width: var(--card-max);
+      padding: 16px;
+      border-radius: 0px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .cat_head {
+      color: #eac60b;
+      text-align: center;
+      font-weight: bold
+    }
+
+    .cat_txt {
+      text-align: justify
+    }
+
+    /* About Container */
+    .about_container {
+      background: aliceblue;
+      padding: 100px
+    }
+
+    .about_head {
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px
+    }
+
+    .about_txt {
+      text-align: justify;
+      color: #2c2c2c
+    }
+
+    .about_btn {
+      background: var(--yellow);
+      color: #000;
+      display: block;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
 
     /* Help / hero large side card */
-    .help_container { background-image:url('bg_help.png'); background-size:cover; background-position:right; padding:60px 100px; min-height:420px; display:flex; align-items:center; }
-    .help_card{ background:var(--yellow); width:350px; height: 450px; padding:40px; color:#000; border-radius:8px; }
-    .help_txt_1{font-size: 30px; font-weight: bold;}
-    .help_txt_2{font-size: 52px; font-weight: 600;}
+    .help_container {
+      background-image: url('bg_help.png');
+      background-size: cover;
+      background-position: right;
+      padding: 60px 100px;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+    }
+
+    .help_card {
+      background: var(--yellow);
+      width: 350px;
+      height: 450px;
+      padding: 40px;
+      color: #000;
+      border-radius: 8px;
+    }
+
+    .help_txt_1 {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .help_txt_2 {
+      font-size: 52px;
+      font-weight: 600;
+    }
 
     /* Services cards */
-    .service_container{ padding:60px 100px; background-image:url('services_bg.png'); background-size:cover; background-position:center; }
-    .service_card{ background:#fff; width:var(--card-max); padding:20px; border-radius:8px; box-sizing:border-box; margin-bottom:20px; }
+    .service_container {
+      padding: 60px 100px;
+      background-image: url('services_bg.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .service_card {
+      background: #fff;
+      width: var(--card-max);
+      padding: 20px;
+      border-radius: 8px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
 
     /* Home repair cards (grid handled by bootstrap) */
-    .home_service_container{background-color: #202020;}
-    .home_repair_card{ background:transparent; color:aliceblue; padding:20px; width:100%; box-sizing:border-box; }
-    .home_repair_service_head{ color:rgb(255, 255, 255); padding-top:100px; text-align:center; font-size:45px; }
-    .home_repair_service_subhead{color: aliceblue;}
-    .home_repair_card_head{color: #f8d42b;}
-    .service_btn, .about_2_btn, .contact_form_btn { display:inline-block; padding:10px 18px; border-radius:4px;margin-bottom: 60px; }
+    .home_service_container {
+      background-color: #202020;
+    }
+
+    .home_repair_card {
+      background: transparent;
+      color: aliceblue;
+      padding: 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .home_repair_service_head {
+      color: rgb(255, 255, 255);
+      padding-top: 100px;
+      text-align: center;
+      font-size: 45px;
+    }
+
+    .home_repair_service_subhead {
+      color: aliceblue;
+    }
+
+    .home_repair_card_head {
+      color: #f8d42b;
+    }
+
+    .service_btn,
+    .about_2_btn,
+    .contact_form_btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 4px;
+      margin-bottom: 60px;
+    }
 
     /* About 2 composition */
-    .aboutus_2_container{ background:linear-gradient(to right, #cfcfcf 50%, #ffffff 50%); padding:60px 40px; }
-    .about2_bg_card{ background:var(--yellow); width:580px; height:360px; position:relative; margin:240px 0 120px 120px; border-radius:8px; overflow:visible; }
-    .about2_img{ position:absolute; transform:translate(100px,-100px); width:550px; height:auto; border-radius:1px; }
-    .aboutus_2_txt_container{padding-left: 50px;}
+    .aboutus_2_container {
+      background: linear-gradient(to right, #cfcfcf 50%, #ffffff 50%);
+      padding: 20px 20px;
+    }
+
+    .about2_bg_card {
+      background: var(--yellow);
+      width: 540px;
+      height: 340px;
+      position: relative;
+      margin: 240px 0 120px 120px;
+      border-radius: 8px;
+      overflow: visible;
+    }
+
+    .about2_img {
+      position: absolute;
+      transform: translate(100px, -100px);
+      width: 520px;
+      height: auto;
+      border-radius: 1px;
+    }
+
+    .aboutus_2_txt_container {}
 
     /* Contact */
-    .contact_container{ background:#000; padding:50px 100px 100px 400px; color:#fff; position:relative; }
-    .contact_form_card{ background:#fff; width:800px; padding:120px 30px 30px 250px; position:relative; box-sizing:border-box; }
-    .contact_card{ background:var(--yellow); width:380px; padding:40px 30px; position:absolute; transform:translate(-180px,-450px); box-shadow:0 0 50px rgba(0,0,0,.4); }
+    .contact_container {
+      background: #000;
+      padding: 50px 100px 100px 400px;
+      color: #fff;
+      position: relative;
+    }
+
+    .contact_form_card {
+      background: #fff;
+      width: 800px;
+      padding: 120px 30px 30px 250px;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .contact_form_btn {
+      background-color: white;
+      border-color: #000;
+      border-radius: 0px;
+      border-style: solid;
+      border-width: 2px;
+    }
+    .contact_form_btn:hover{
+      background-color: white;
+      border-color: #ffc400;
+      border-radius: 0px;
+      border-style: solid;
+      border-width: 2px;
+      color: #000;
+    }
+
+    input[type="text"],
+    textarea {
+      border: none;
+      border-radius: 0px;
+      width: 100%;
+      border-bottom: 2px solid black;
+      outline: none;
+
+    }
+    input[type="email"],
+    textarea {
+      border: none;
+      border-radius: 0px;
+      width: 100%;
+      border-bottom: 2px solid black;
+      outline: none;
+
+    }
+    input,
+    textarea {
+      border: none;
+      border-radius: 0px;
+      width: 100%;
+      border-bottom: 2px solid black;
+      outline: none;
+
+    }
+
+    .contact_card {
+      background: var(--yellow);
+      width: 380px;
+      padding: 40px 30px;
+      position: absolute;
+      transform: translate(-180px, -450px);
+      box-shadow: 0 0 50px rgba(0, 0, 0, .4);
+    }
+
+    .contact_card_head {
+      color: #000;
+      font-weight: bold;
+    }
+
+    .contact_card_txt {
+      color: #000;
+    }
 
     /* Footer social icons hover */
-    .img_box{ width:25px; height:25px; position:relative; display:inline-block; margin:0 6px; }
-    .img_box img{ position:absolute; left:0; top:0; transition:opacity .25s ease; width:100%; height:100% }
-    .img_box img.hover_img{ opacity:0 }
-    .img_box:hover img.hover_img{ opacity:1 }
-    .img_box:hover img.main_img{ opacity:0 }
+    .img_box {
+      width: 25px;
+      height: 25px;
+      position: relative;
+      display: inline-block;
+      margin: 0 6px;
+    }
+
+    .img_box img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: opacity .25s ease;
+      width: 100%;
+      height: 100%
+    }
+
+    .img_box img.hover_img {
+      opacity: 0
+    }
+
+    .img_box:hover img.hover_img {
+      opacity: 1
+    }
+
+    .img_box:hover img.main_img {
+      opacity: 0
+    }
 
     /* Utilities */
-    .d-ms-center{ display:flex; justify-content:center; align-items:center }
-    p, .about_txt, .service_card_txt, .home_repair_card_txt, .home_desc { word-break:break-word; hyphens:auto }
+    .d-ms-center {
+      display: flex;
+      justify-content: center;
+      align-items: center
+    }
+
+    p,
+    .about_txt,
+    .service_card_txt,
+    .home_repair_card_txt,
+    .home_desc {
+      word-break: break-word;
+      hyphens: auto
+    }
 
     /* ---------------- Breakpoints ---------------- */
     /* Extra Small: phones (max-width:575.98px) */
-    @media (max-width:575.98px){
+    @media (max-width:575.98px) {
+
       /* general padding shrink */
-      .home_container{ padding:40px 18px }
-      .cat_container{ padding:20px 12px }
-      .service_container{ padding:30px 12px }
-      .about_container{ padding:30px 14px }
-      .contact_container{ padding:30px 14px }
+      .home_container {
+        padding: 40px 18px
+      }
+
+      .cat_container {
+        padding: 20px 12px
+      }
+
+      .service_container {
+        padding: 30px 12px
+      }
+
+      .about_container {
+        padding: 30px 14px
+      }
+
+      .contact_container {
+        padding: 30px 14px
+      }
 
       /* navbar */
-      .logo{ height:44px }
-      .navbar .container-fluid{ padding-left:12px; padding-right:12px }
+      .logo {
+        height: 44px
+      }
+
+      .navbar .container-fluid {
+        padding-left: 12px;
+        padding-right: 12px
+      }
 
       /* hero typography */
-      .home_text{ font-size:34px; line-height:38px }
-      .home_span_text{ font-size:18px }
+      .home_text {
+        font-size: 34px;
+        line-height: 38px
+      }
+
+      .home_span_text {
+        font-size: 18px
+      }
 
       /* cards full width */
-      .cat_card, .service_card, .home_repair_card, .contact_card, .contact_form_card { width:100%; max-width:100%; margin:12px 0; }
-      .about2_bg_card{ margin:24px auto; position:static; width:90% }
-      .about2_img{ position:static; transform:none; display:block; margin:0 auto }
+      .cat_card,
+      .service_card,
+      .home_repair_card,
+      .contact_card,
+      .contact_form_card {
+        width: 100%;
+        max-width: 100%;
+        margin: 12px 0;
+      }
+
+      .about2_bg_card {
+        margin: 24px auto;
+        position: static;
+        width: 90%
+      }
+
+      .about2_img {
+        position: static;
+        transform: none;
+        display: block;
+        margin: 0 auto
+      }
 
       /* help card stack */
-      .help_card{ width:100%; padding:24px; height:auto }
+      .help_card {
+        width: 100%;
+        padding: 24px;
+        height: auto
+      }
 
       /* contact stack */
-      .contact_form_card, .contact_card{ position:static; transform:none; padding:20px; margin:12px auto; width:100% }
+      .contact_form_card,
+      .contact_card {
+        position: static;
+        transform: none;
+        padding: 20px;
+        margin: 12px auto;
+        width: 100%
+      }
 
       /* smaller footer icons */
-      .img_box{ width:34px; height:34px }
-      .home_repair_service_head{ padding-top:60px; font-size:28px }
-      .aboutus_2_container{ padding:24px 12px }
+      .img_box {
+        width: 34px;
+        height: 34px
+      }
+
+      .home_repair_service_head {
+        padding-top: 60px;
+        font-size: 28px
+      }
+
+      .aboutus_2_container {
+        padding: 24px 12px
+      }
     }
 
     /* Small: >=576px and <768px */
-    @media (min-width:576px) and (max-width:767.98px){
-      .home_container{ padding:50px 24px }
-      .logo{ height:48px }
-      .home_text{ font-size:40px; line-height:44px }
-      .home_span_text{ font-size:20px }
+    @media (min-width:576px) and (max-width:767.98px) {
+      .home_container {
+        padding: 50px 24px
+      }
 
-      .cat_card, .service_card { max-width:320px; margin:12px auto }
-      .about2_bg_card{ width:80%; margin:40px auto; position:relative }
-      .about2_img{ position:relative; transform:translateX(10px) translateY(-20px); max-width:100% }
+      .logo {
+        height: 48px
+      }
 
-      .contact_form_card{ max-width:700px; padding:36px; margin:18px auto; }
-      .contact_card{ position:static; transform:none; margin:20px auto }
-      .home_repair_service_head{ padding-top:80px; font-size:34px; }
+      .home_text {
+        font-size: 40px;
+        line-height: 44px
+      }
+
+      .home_span_text {
+        font-size: 20px
+      }
+
+      .cat_card,
+      .service_card {
+        max-width: 320px;
+        margin: 12px auto
+      }
+
+      .about2_bg_card {
+        width: 80%;
+        margin: 40px auto;
+        position: relative
+      }
+
+      .about2_img {
+        position: relative;
+        transform: translateX(10px) translateY(-20px);
+        max-width: 100%
+      }
+
+      .contact_form_card {
+        max-width: 700px;
+        padding: 36px;
+        margin: 18px auto;
+      }
+
+      .contact_card {
+        position: static;
+        transform: none;
+        margin: 20px auto
+      }
+
+      .home_repair_service_head {
+        padding-top: 80px;
+        font-size: 34px;
+      }
     }
 
     /* Medium: >=768px and <992px */
-    @media (min-width:768px) and (max-width:991.98px){
-      .home_container{ padding:70px 60px }
-      .logo{ height:54px }
-      .home_text{ font-size:56px; line-height:60px }
-      .home_span_text{ font-size:32px }
+    @media (min-width:768px) and (max-width:991.98px) {
+      .home_container {
+        padding: 70px 60px
+      }
 
-      .cat_card, .service_card{ width:var(--card-max); max-width:100%; margin:12px }
-      .about2_bg_card{ width:440px; margin:80px 20px; position:relative }
-      .about2_img{ position:absolute; transform:translate(80px,-80px); max-width:420px }
+      .logo {
+        height: 54px
+      }
 
-      .contact_form_card{ max-width:760px; padding:60px 30px 30px 180px; position:relative }
-      .contact_card{ position:static; transform:none; margin-top:30px }
+      .home_text {
+        font-size: 56px;
+        line-height: 60px
+      }
 
-      .home_service_cardd{ display:flex; flex-wrap:wrap; gap:20px; justify-content:center }
+      .home_span_text {
+        font-size: 32px
+      }
+
+      .cat_card,
+      .service_card {
+        width: var(--card-max);
+        max-width: 100%;
+        margin: 12px
+      }
+
+      .about2_bg_card {
+        width: 440px;
+        margin: 80px 20px;
+        position: relative
+      }
+
+      .about2_img {
+        position: absolute;
+        transform: translate(80px, -80px);
+        max-width: 420px
+      }
+
+      .contact_form_card {
+        max-width: 760px;
+        padding: 60px 30px 30px 180px;
+        position: relative
+      }
+
+      .contact_card {
+        position: static;
+        transform: none;
+        margin-top: 30px
+      }
+
+      .home_service_cardd {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center
+      }
     }
 
     /* Large: >=992px and <1200px */
-    @media (min-width:992px) and (max-width:1199.98px){
-      .home_container{ padding:90px 100px }
-      .logo{ height:58px }
-      .home_text{ font-size:66px; line-height:68px }
-      .home_span_text{ font-size:40px }
+    @media (min-width:992px) and (max-width:1199.98px) {
+      .home_container {
+        padding: 90px 100px
+      }
 
-      .cat_container{ padding:0 60px 80px 60px }
-      .cat_card, .service_card{ width:var(--card-max); margin:0 12px 30px 0 }
+      .logo {
+        height: 58px
+      }
 
-      .about2_bg_card{ width:580px; margin:160px 0 120px 80px; }
-      .about2_img{ position:absolute; transform:translate(100px,-100px); }
+      .home_text {
+        font-size: 66px;
+        line-height: 68px
+      }
 
-      .contact_form_card{ width:800px; padding:120px 30px 0 250px }
-      .contact_card{ position:absolute; transform:translate(-180px,-450px) }
+      .home_span_text {
+        font-size: 40px
+      }
 
-      .home_service_cardd{ margin:30px 60px 0 60px; gap:24px }
+      .cat_container {
+        padding: 0 60px 80px 60px
+      }
+
+      .cat_card,
+      .service_card {
+        width: var(--card-max);
+        margin: 0 12px 30px 0
+      }
+
+      .about2_bg_card {
+        width: 580px;
+        margin: 160px 0 120px 80px;
+      }
+
+      .about2_img {
+        position: absolute;
+        transform: translate(100px, -100px);
+      }
+
+      .contact_form_card {
+        width: 800px;
+        padding: 120px 30px 0 250px
+      }
+
+      .contact_card {
+        position: absolute;
+        transform: translate(-180px, -450px)
+      }
+
+      .home_service_cardd {
+        margin: 30px 60px 0 60px;
+        gap: 24px
+      }
     }
 
     /* Extra Large: >=1200px */
-    @media (min-width:1200px){
-      .home_container{ padding:120px 120px }
-      .home_text{ font-size:70px; line-height:60px }
-      .home_span_text{ font-size:45px }
+    @media (min-width:1200px) {
+      .home_container {
+        padding: 120px 120px
+      }
 
-      .cat_card, .service_card { width:var(--card-max) }
-      .about2_bg_card{ width:580px; margin:240px 0 120px 120px }
-      .about2_img{ position:absolute; transform:translate(100px,-100px) }
+      .home_text {
+        font-size: 70px;
+        line-height: 60px
+      }
 
-      .contact_form_card{ width:800px; padding:120px 30px 0 250px }
-      .contact_card{ position:absolute; transform:translate(-180px,-450px) }
+      .home_span_text {
+        font-size: 45px
+      }
+
+      .cat_card,
+      .service_card {
+        width: var(--card-max)
+      }
+
+      .about2_bg_card {
+        width: 580px;
+        margin: 240px 0 120px 120px
+      }
+
+      .about2_img {
+        position: absolute;
+        transform: translate(100px, -100px)
+      }
+
+      .contact_form_card {
+        width: 800px;
+        padding: 120px 30px 0 250px
+      }
+
+      .contact_card {
+        position: absolute;
+        transform: translate(-180px, -450px)
+      }
     }
 
     /* Dropdown menu scroll for small screens */
-    .dropdown-menu{ max-height:60vh; overflow-y:auto }
-    a.nav-link{ white-space:nowrap }
+    .dropdown-menu {
+      max-height: 60vh;
+      overflow-y: auto
+    }
 
+    a.nav-link {
+      white-space: nowrap
+    }
   </style>
 </head>
+
 <body>
 
   <!-- NAV -->
   <nav class="navbar navbar-expand-lg bg-white fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="logo.png" class="logo" alt="logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -215,7 +734,8 @@
           <li class="nav-item"><a class="nav-link nav-txt" href="#home_section">Home</a></li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-txt" href="#services_section" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <a class="nav-link dropdown-toggle nav-txt" href="#services_section" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Services</a>
             <ul class="dropdown-menu nav-txt">
               <li><a class="dropdown-item nav-txt" href="#">Home Cleaning</a></li>
               <li><a class="dropdown-item nav-txt" href="#">Interior Painting</a></li>
@@ -234,7 +754,7 @@
         </ul>
 
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         </form>
       </div>
     </div>
@@ -247,7 +767,10 @@
         <div class="col-12 col-md-6">
           <div class="home_txt_container">
             <p class="home_text">HOME REPAIR<br><span class="home_span_text">& Renovating</span></p>
-            <p class="home_desc">Our Home Repair and Renovating services are designed to keep your home safe, functional, and beautiful. From fixing everyday issues like leaks, electrical problems, and damaged walls to complete renovations of kitchens, bathrooms, and living spaces, we handle every project with care and quality craftsmanship...</p>
+            <p class="home_desc">Our Home Repair and Renovating services are designed to keep your home safe,
+              functional, and beautiful. From fixing everyday issues like leaks, electrical problems, and damaged walls
+              to complete renovations of kitchens, bathrooms, and living spaces, we handle every project with care and
+              quality craftsmanship...</p>
             <button class="home_readmore btn">READ MORE</button>
           </div>
         </div>
@@ -266,7 +789,8 @@
           <div class="cat_card text-center">
             <img src="cat_icon_1.png" class="cat_icon mx-auto" alt="">
             <h5 class="cat_head mt-3">HOME CLEANING</h5>
-            <p class="cat_txt">Our Home Cleaning service ensures your living space stays spotless, fresh, and hygienic.</p>
+            <p class="cat_txt">Our Home Cleaning service ensures your living space stays spotless, fresh, and hygienic.
+            </p>
           </div>
         </div>
 
@@ -274,7 +798,8 @@
           <div class="cat_card text-center">
             <img src="cat_icon_2.png" class="cat_icon mx-auto" alt="">
             <h5 class="cat_head mt-3">INTERIOR PAINTING</h5>
-            <p class="cat_txt">We provide high-quality interior painting services that refresh and brighten your home with smooth finishes and long-lasting colors.</p>
+            <p class="cat_txt">We provide high-quality interior painting services that refresh and brighten your home
+              with smooth finishes and long-lasting colors.</p>
           </div>
         </div>
 
@@ -282,7 +807,8 @@
           <div class="cat_card text-center">
             <img src="cat_icon_3.png" class="cat_icon mx-auto" alt="">
             <h5 class="cat_head mt-3">LIGHT FIXTURES</h5>
-            <p class="cat_txt">Installation, repair, and replacement of all types of light fixtures to brighten your home safely and efficiently.</p>
+            <p class="cat_txt">Installation, repair, and replacement of all types of light fixtures to brighten your
+              home safely and efficiently.</p>
           </div>
         </div>
 
@@ -290,7 +816,8 @@
           <div class="cat_card text-center">
             <img src="cat_icon_4.png" class="cat_icon mx-auto" alt="">
             <h5 class="cat_head mt-3">SMART HOME</h5>
-            <p class="cat_txt">We transform your home into a modern smart space using the latest automation technology.</p>
+            <p class="cat_txt">We transform your home into a modern smart space using the latest automation technology.
+            </p>
           </div>
         </div>
       </div>
@@ -299,12 +826,15 @@
 
   <!-- ABOUT -->
   <section id="aboutus_section">
-    <div class="container-fluid">
+    <div class="container-fluid about_container">
       <div class="row">
         <div class="col-12">
           <h1 class="about_head">About Us</h1>
-          <p class="about_txt">Our Home Repair and Renovating services are designed to maintain, improve, and transform your living spaces. We handle all types of repairs including plumbing leaks, electrical issues, wall damages, door and window repairs, flooring fixes, and more. For renovation projects, we upgrade kitchens, bathrooms, living rooms, and bedrooms with modern designs, quality materials, and skilled craftsmanship.</p>
-          <button class="about_btn btn" style="background:var(--yellow); color:#000">LEARN MORE</button>
+          <p class="about_txt">Our Home Repair and Renovating services are designed to maintain, improve, and transform
+            your living spaces. We handle all types of repairs including plumbing leaks, electrical issues, wall
+            damages, door and window repairs, flooring fixes, and more. For renovation projects, we upgrade kitchens,
+            bathrooms, living rooms, and bedrooms with modern designs, quality materials, and skilled craftsmanship.</p>
+          <button class="about_btn btn">LEARN MORE</button>
         </div>
       </div>
     </div>
@@ -330,7 +860,8 @@
       <div class="row">
         <div class="col-12 col-lg-6">
           <h1 class="service_head">Popular Services</h1>
-          <p class="service_txt">As a customer-focused solution provider, we're dedicated to redefining the home improvement service experience for homeowners and commercial property owners.</p>
+          <p class="service_txt">As a customer-focused solution provider, we're dedicated to redefining the home
+            improvement service experience for homeowners and commercial property owners.</p>
         </div>
       </div>
 
@@ -339,7 +870,8 @@
           <div class="service_card text-center">
             <img src="service_img1.png" class="service_img mx-auto" alt="">
             <h4 class="service_card_head mt-3">DOOR PAINTING</h4>
-            <p class="service_card_txt">We provide professional door painting services to give your doors a clean, fresh, and long-lasting finish.</p>
+            <p class="service_card_txt">We provide professional door painting services to give your doors a clean,
+              fresh, and long-lasting finish.</p>
           </div>
         </div>
 
@@ -347,7 +879,8 @@
           <div class="service_card text-center">
             <img src="service_img2.png" class="service_img mx-auto" alt="">
             <h4 class="service_card_head mt-3">GARBAGE DISPOSAL</h4>
-            <p class="service_card_txt">Fast and reliable garbage disposal services to keep your home clean and clutter-free.</p>
+            <p class="service_card_txt">Fast and reliable garbage disposal services to keep your home clean and
+              clutter-free.</p>
           </div>
         </div>
 
@@ -355,7 +888,8 @@
           <div class="service_card text-center">
             <img src="service_img3.png" class="service_img mx-auto" alt="">
             <h4 class="service_card_head mt-3">PLUMBING SERVICE</h4>
-            <p class="service_card_txt">Professional plumbing services including leak repairs, pipe fixing, installation and maintenance.</p>
+            <p class="service_card_txt">Professional plumbing services including leak repairs, pipe fixing, installation
+              and maintenance.</p>
           </div>
         </div>
       </div>
@@ -367,14 +901,16 @@
     <div class="container-fluid home_service_container">
       <div class="text-center mb-4">
         <h1 class="home_repair_service_head">Home Repair Services</h1>
-        <p class="home_repair_service_subhead">We provide reliable and affordable home repair services to fix everyday problems and keep your home safe, functional, and well-maintained.</p>
+        <p class="home_repair_service_subhead">We provide reliable and affordable home repair services to fix everyday
+          problems and keep your home safe, functional, and well-maintained.</p>
       </div>
 
       <div class="row g-4 home_service_cardd justify-content-center">
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex">
           <div class="home_repair_card">
             <h3 class="home_repair_card_head">PAINTING</h3>
-            <p class="home_repair_card_txt">High-quality interior painting services that refresh and brighten your home.</p>
+            <p class="home_repair_card_txt">High-quality interior painting services that refresh and brighten your home.
+            </p>
           </div>
         </div>
 
@@ -388,7 +924,8 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex">
           <div class="home_repair_card">
             <h3 class="home_repair_card_head">REMODELING</h3>
-            <p class="home_repair_card_txt">Complete home remodeling solutions with modern design and expert craftsmanship.</p>
+            <p class="home_repair_card_txt">Complete home remodeling solutions with modern design and expert
+              craftsmanship.</p>
           </div>
         </div>
 
@@ -427,13 +964,15 @@
       <div class="row align-items-center">
         <div class="col-12 col-lg-7">
           <div class="about2_bg_card">
-            <img src="aboutUs_2_girl.png" alt="About us" class="about2_img img-fluid rounded">
+            <img src="aboutUs_2_girl.png" alt="About us" class="about2_img img-fluid">
           </div>
         </div>
 
-        <div class="col-12 col-lg-5 p-4 aboutus_2_txt_container">
+        <div class="col-12 col-lg-5 aboutus_2_txt_container">
           <h2 class="aboutus_2_head">About Us</h2>
-          <p class="aboutus_2_txt">Our Home Repair and Renovating services are designed to maintain, improve, and transform your living spaces. We handle all types of repairs including plumbing leaks, electrical issues, wall damages, door and window repairs, flooring fixes, and more.</p>
+          <p class="aboutus_2_txt">Our Home Repair and Renovating services are designed to maintain, improve, and
+            transform your living spaces. We handle all types of repairs including plumbing leaks, electrical issues,
+            wall damages, door and window repairs, flooring fixes, and more.</p>
           <button class="about_2_btn btn btn-warning">READ MORE</button>
         </div>
       </div>
@@ -456,11 +995,11 @@
               </div>
 
               <div class="mb-4">
-                <textarea name="message" rows="3" class="form-control" placeholder="Your message"></textarea>
+                <textarea name="message" placeholder="Your message"></textarea>
               </div>
 
               <div>
-                <button type="submit" class="contact_form_btn btn btn-light">SUBMIT</button>
+                <button type="submit" class="contact_form_btn btn ">SUBMIT</button>
               </div>
             </form>
           </div>
@@ -490,7 +1029,8 @@
         <div class="img_box"><img src="fb_1.png" class="main_img"><img src="fb_2.png" class="hover_img"></div>
         <div class="img_box"><img src="insta1.png" class="main_img"><img src="insta2.png" class="hover_img"></div>
         <div class="img_box"><img src="yt_1.png" class="main_img"><img src="yt_2.png" class="hover_img"></div>
-        <div class="img_box"><img src="whatsapp_1.png" class="main_img"><img src="whatsapp_2.png" class="hover_img"></div>
+        <div class="img_box"><img src="whatsapp_1.png" class="main_img"><img src="whatsapp_2.png" class="hover_img">
+        </div>
       </div>
     </div>
   </footer>
@@ -498,4 +1038,5 @@
   <!-- Bootstrap JS (unchanged) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
